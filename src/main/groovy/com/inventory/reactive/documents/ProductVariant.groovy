@@ -4,15 +4,11 @@ import groovy.transform.Canonical
 import org.springframework.data.mongodb.core.index.Indexed
 import org.springframework.data.mongodb.core.mapping.Document
 
-@Document("variants")
+@Document("products")
 @Canonical
-//@Sharded(["code", "location"])
-class Product {
+class ProductVariant {
     @Indexed
+    String sku
     String itemId
-    @Indexed
-    String location
-    BigDecimal price
-    Map<ProductVariant, Integer> variants
-    List<ProductReference> references
+    String metalType
 }
